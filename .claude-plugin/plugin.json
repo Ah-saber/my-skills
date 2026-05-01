@@ -1,0 +1,15 @@
+{
+  "name": "my-skills",
+  "skills": [
+    "./skills/engineering/warmup",
+    "./skills/engineering/to-my-prd",
+    "./skills/engineering/to-my-issues",
+    "./skills/engineering/grill-me",
+    "./skills/engineering/grill-with-docs",
+    "./skills/engineering/research-hours",
+    "./skills/engineering/tdd",
+    "./skills/engineering/diagnose",
+    "./skills/engineering/triage",
+    "./skills/engineering/improve-codebase-architecture"
+  ]
+}
