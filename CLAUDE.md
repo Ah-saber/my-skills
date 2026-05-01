@@ -7,6 +7,7 @@ This is the my-skill collection — a set of Claude Code skills implementing the
 | Skill | Type | Description |
 |-------|------|-------------|
 | warmup | New | Project setup + session warmup |
+| caveman | New | Ultra-compressed communication (~75% token reduction) |
 | to-my-prd | Adapted | PRD synthesis, asks when info missing |
 | to-my-issues | Adapted | Vertical slicing into issues |
 | research-hours | Self-built | Academic Office Hours — PI perspective research diagnosis |
@@ -16,6 +17,12 @@ This is the my-skill collection — a set of Claude Code skills implementing the
 | diagnose | Reused (Matt) | 6-phase debugging |
 | triage | Reused (Matt) | Issue state machine |
 | improve-codebase-architecture | Reused (Matt) | Architecture deepening |
+
+## External Tools
+
+| Tool | Source | Description |
+|------|--------|-------------|
+| codex | openai-codex plugin | Multi-AI second opinion: review / challenge / consult. Usable at any phase. |
 
 ## Design Reference
 

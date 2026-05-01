@@ -169,6 +169,8 @@ cssclasses:
          ├── grill-me / grill-with-docs（收敛，删除不确定性）
          │     └── 逐问逐答，一次一个问题，你说停才停
          │
+         ├── codex（可选，外部独立意见——challenge 假设或 review 方案）
+         │
          ├── to-prd（固化方案，不新增问题）
          │
          └── to-issues（垂直拆解为 Issue）
@@ -436,6 +438,7 @@ REFACTOR: 去重 → 深化 → 审视新代码揭示的问题
 |------|------|
 | 不熟悉代码区域 | zoom-out — 使用 codebase-onboarding 或 graphify 获取模块关系总览 |
 | 发现架构味道 | 暂停实现，触发架构深化（improve-codebase-architecture） |
+| 实现中需要第二意见 | codex — 外部 AI 独立审查、challenge 假设、讨论方案（openai-codex 插件，任意阶段可调用） |
 
 **架构深化触发条件**：
 1. 写测试时发现无法在不 mock 内部模块的情况下测试
@@ -462,6 +465,8 @@ in-review
     ├── 并行审查
     │   ├── code-reviewer Agent
     │   └── security-reviewer Agent
+    │
+    ├── 可选：codex 独立审查（第二 AI 意见，与 Claude 审查交叉验证）
     │
     ├── 汇总审查意见
     │
@@ -719,6 +724,7 @@ docs/adr/0002-domain-model-separates-physical-from-logical.md
 
 | 我想…… | 进入 Phase |
 |--------|-----------|
+| 省token、砍废话、只要干货 | `/caveman`（全局通信模式，不限 Phase） |
 | 新项目初始化工作流配置 | Phase 0: Warmup |
 | 提交一个新功能请求 | Phase 1: 想法→Issue |
 | 报告一个 Bug | Phase 1: 直接写 Issue |

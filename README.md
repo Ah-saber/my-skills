@@ -29,6 +29,7 @@ Warmup   →   想法 → Issue     →    状态机   →   实现循环   → 
 想法
   → research-hours（可选，多角色发散找方向）
   → grill-me / grill-with-docs（逐问逐答，收敛）
+  → codex（可选，外部意见——challenge 假设或 review 方案）
   → to-my-prd（固化 PRD，信息不足时追问）
   → to-my-issues（垂直拆解为 Issue）
 ```
@@ -87,6 +88,13 @@ cp -r skills/engineering/* ~/.claude/skills/
 | **tdd** | 复用 Matt | Red-Green-Refactor 循环 |
 | **diagnose** | 复用 Matt | 6 Phase 诊断循环 + Feedback Loop |
 | **improve-codebase-architecture** | 复用 Matt | 架构深化——浅模块 → 深模块重组 |
+| **caveman** | 新建 | 压缩通信模式——砍 75% token，保留全部技术精度 |
+
+### 外部工具（不随本项目安装）
+
+| 工具 | 来源 | 功能 |
+|------|------|------|
+| **codex** | openai-codex 插件 | 多 AI 第二意见——review / challenge / consult 三模式，任意阶段可调用 |
 
 ## 设计原则
 
