@@ -70,11 +70,20 @@ Issue done 时追加 Issue Summary（Purpose / Motivation / Approach / Result / 
 # 推荐
 npx skills@latest add <path-to-my-skill>
 
-# 手动
+# 手动（全部技能）
 cp -r skills/engineering/* ~/.claude/skills/
+cp -r skills/research/* ~/.claude/skills/
+
+# 仅安装项目工作流技能
+cp -r skills/engineering/* ~/.claude/skills/
+
+# 仅安装科研工作流技能
+cp -r skills/research/* ~/.claude/skills/
 ```
 
 ## 技能列表
+
+### Engineering — 项目工作流
 
 | 技能 | 来源 | 功能 |
 |------|------|------|
@@ -89,6 +98,32 @@ cp -r skills/engineering/* ~/.claude/skills/
 | **diagnose** | 复用 Matt | 6 Phase 诊断循环 + Feedback Loop |
 | **improve-codebase-architecture** | 复用 Matt | 架构深化——浅模块 → 深模块重组 |
 | **caveman** | 新建 | 压缩通信模式——砍 75% token，保留全部技术精度 |
+| **handoff** | 复用 Matt | 会话交接——压缩当前对话为交接文档 |
+| **zoom-out** | 复用 Matt | 宏观视角——拉远看代码/架构的全局上下文 |
+
+### Research — 科研工作流
+
+| 技能 | 功能 |
+|------|------|
+| **alphaxiv-paper-lookup** | 查找 arxiv 论文，获取 AI 生成的结构化概述 |
+| **annotation-extract** | 从 Zotero 提取 PDF 高亮和笔记，按颜色分组 |
+| **paper-search** | 在 Zotero 库中搜索论文，支持语义搜索和高级筛选 |
+| **paper-summary** | 生成论文的详细中文摘要（背景、方法、结果、结论） |
+| **paper-notes** | 为论文创建完整 Obsidian 笔记（含概率框架分析） |
+| **paper-graph** | 生成论文引用关系的可视化 Canvas 图谱 |
+| **paper-dashboard** | 创建 Obsidian Bases 论文阅读进度仪表盘 |
+| **idea-capture** | 快速记录研究想法和灵感到 Inspiration 目录 |
+| **idea-organize** | 整理 Inspiration 目录中的 Idea（标签、分组、去重） |
+| **idea-review** | 回顾和评估 Idea，提供行动建议 |
+| **idea-map** | 生成 Idea 可视化概念图谱 |
+| **idea-tracker** | 创建 Obsidian Bases Idea 追踪仪表盘 |
+| **note-analyze** | 分析笔记结构和内容，发现语义连接和孤立笔记 |
+| **note-organize** | 笔记整理编排器（分析→规划→委派→验证） |
+| **note-link** | 发现笔记间语义关联，创建 Wikilink |
+| **note-standardize** | 标准化 Obsidian 笔记格式（Callouts、标签、Frontmatter） |
+| **note-template** | 为不同类型笔记创建标准模板 |
+| **obsidian-search** | Obsidian Vault 全文搜索、标签筛选、链接关系查询 |
+| **research-dashboard** | 创建综合研究进度仪表盘 |
 
 ### 外部工具（不随本项目安装）
 

@@ -17,7 +17,7 @@ This skill takes the current conversation context and codebase understanding and
 
    Check with the user that these modules match their expectations. Check with the user which modules they want tests written for.
 
-5. Write the PRD using the template below, then publish it to the project issue tracker. Apply the needs-triage label so it enters the normal triage flow.
+5. Write the PRD using the template below, then save it to `.scratch/<plan-slug>/PRD.md`. Use a short kebab-case slug derived from the PRD title (e.g., `dataset-understanding`). Create the directory if it doesn't exist.
 
 ## PRD Template
 
@@ -40,7 +40,11 @@ A long, numbered list of user stories in the format:
 
 1. As an <actor>, I want a <feature>, so that <benefit>
 
-This list should be extensive and cover all aspects of the feature.
+<user-story-example>
+1. As a mobile bank customer, I want to see balance on my accounts, so that I can make better informed decisions about my spending
+</user-story-example>
+
+This list should be extremely extensive and cover all aspects of the feature.
 
 ## Integration Points
 
@@ -60,10 +64,15 @@ Things explicitly NOT included in this PRD. Be specific — vague out of scope c
 ## Decisions
 
 Implementation and testing decisions made during design:
+
+- The modules that will be built/modified
+- The interfaces of those modules that will be modified
 - Architecture decisions (create ADR if all three conditions are met: hard to reverse, surprising without context, real tradeoff)
-- Module design and interfaces
+- Schema changes and API contracts
 - Testing strategy and which modules will be tested
 - What makes a good test in this context
 
 Do NOT include specific file paths — they become outdated quickly.
+
+Exception: if a prototype produced a snippet that encodes a decision more precisely than prose can (state machine, reducer, schema, type shape), inline it within the relevant decision and note briefly that it came from a prototype. Trim to the decision-rich parts — not a working demo, just the important bits.
 ```

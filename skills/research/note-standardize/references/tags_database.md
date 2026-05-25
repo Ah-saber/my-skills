@@ -7,7 +7,7 @@
 当为新论文推荐标签时：
 1. 先在此表中查找语义相似的已存在标签
 2. 如果找到相似标签，优先使用
-3. 如果是全新标签类别，添加到此表
+3. 如果是全新标签类别，添加到末尾"新标签记录区"
 
 ### 标签选择规则
 
@@ -20,6 +20,15 @@
 - 方法特点：`Method/Optimization/Regularization`、`Method/Frequency-Domain`
 - 任务类型：`CV/Low-Level/Infrared/NUC`、`Task/Image-Restoration`
 - 技术特征：`Method/Train-Free`、`Method/Physics-Inspired`
+
+### 标签层级规范
+
+- **任务标签**用 `CV/` 前缀：`CV/{Level}/{SubLevel}/{Task}`
+- **方法标签**用 `Method/` 前缀：`Method/{Category}/{Specific}`
+- **数学标签**用 `Math/` 前缀：`Math/{Category}/{Specific}`
+- **场所标签**用 `Venue/` 前缀：`Venue/{Conference}`
+
+**关键原则**：Diffusion/Flow/GAN 等生成方法是 **Method** 而非 CV 任务类别。`CV/Generation/` 下的标签描述的是生成任务（图像生成、编辑等），而非生成方法。
 
 ---
 
@@ -40,20 +49,19 @@
 | `CV/Low-Level/Infrared/Temperature-Estimation` | 红外温度估计 | Temperature Calibration, Thermography, Temperature Regression |
 | `CV/Low-Level/Infrared/Turbulence-Mitigation` | 大气湍流消除 | Turbulence Mitigation, Atmospheric Turbulence, Geometric Distortion Correction |
 
-### Video
-
-| 标签 | 说明 | 相似关键词 |
-|------|------|-----------|
-| `CV/Video/Restoration` | 视频复原 | Video Restoration, Sequence Reconstruction, Video Enhancement |
-
 ### Low-Level / Visible
 
 | 标签 | 说明 | 相似关键词 |
 |------|------|-----------|
 | `CV/Low-Level/Restoration` | 低层图像恢复 | Image Restoration, Degradation-Agnostic, All-in-One, Unified Restoration |
+| `CV/Low-Level/Restoration/All-in-One` | 一体化图像恢复 | Universal Restoration, All-in-One, Multi-Task Restoration, Task-Decoupled |
 | `CV/Low-Level/Enhancement` | 可见光图像增强 | Enhancement, Brighten |
 | `CV/Low-Level/Denoising` | 可见光去噪 | Denoising, Noise Removal |
 | `CV/Low-Level/Super-Resolution` | 可见光超分辨率 | SR, Upscaling |
+| `CV/Low-Level/low-light` | 低光照图像处理 | Low-light, Dark Image, Night Scene |
+| `CV/Low-Level/Visable` | 可见光图像处理（通用） | Visible Light, RGB Image |
+| `CV/Low-Level/RAW` | RAW 图像处理 | Raw Image, Bayer, RGGB, ISP, Raw Domain |
+| `CV/Low-Level/Blur-Estimation` | 模糊核/PSF估计 | PSF Estimation, Blur Kernel Estimation, Point Spread Function, MTF, SFR |
 
 ### Generation
 
@@ -61,9 +69,27 @@
 |------|------|-----------|
 | `CV/Generation/Image-Generation` | 图像生成 | Image Synthesis, Generate Images |
 | `CV/Generation/Image-Editing` | 图像编辑 | Edit, Manipulate, Modify |
-| `CV/Generation/Restoration` | 图像恢复 | Restoration, Recover, Repair |
+| `CV/Generation/Restoration` | 图像恢复（生成式） | Restoration, Recover, Repair |
 | `CV/Generation/Video-Generation` | 视频生成 | Video Synthesis |
 | `CV/Generation/Image-to-Image` | 图像到图像转换 | I2I, Image Translation |
+
+### Video
+
+| 标签 | 说明 | 相似关键词 |
+|------|------|-----------|
+| `CV/Video/Restoration` | 视频复原 | Video Restoration, Sequence Reconstruction, Video Enhancement |
+
+### Domain
+
+| 标签 | 说明 | 相似关键词 |
+|------|------|-----------|
+| `CV/Domain/Remote-Sensing` | 遥感图像处理领域 | Remote Sensing, Satellite Image, Aerial Image |
+
+### Survey
+
+| 标签 | 说明 | 相似关键词 |
+|------|------|-----------|
+| `CV/Survey` | 计算机视觉综述论文 | Survey, Review, 综述 |
 
 ### 3DV
 
@@ -98,9 +124,17 @@
 | 标签 | 说明 | 相似关键词 |
 |------|------|-----------|
 | `Method/Learning/Self-Supervised` | 自监督学习 | Self-supervised, Unsupervised |
+| `Method/Learning/Representation-Learning` | 表征学习 | Representation Learning, Feature Learning, Embedding Learning |
 | `Method/Learning/Deep` | 深度学习 | Deep Learning, CNN, Neural Network |
 | `Method/Learning/Weakly-Supervised` | 弱监督学习 | Weak Supervision |
 | `Method/Learning/Few-Shot` | 少样本学习 | Few-shot, One-shot |
+| `Method/Learning/Transfer` | 迁移学习/微调 | Transfer Learning, Fine-tuning, Adaptation |
+| `Method/Learning/Fine-Tuning` | 微调策略 | Fine-tuning, Joint Optimization, Unified Training |
+| `Method/Learning/Multi-Modal` | 多模态方法 | Vision-Language, CLIP, Multi-Modal, VLM |
+| `Method/Learning/Reinforcement-Learning` | 强化学习 | RL, Reinforcement Learning, Policy Gradient, Actor-Critic, MDP |
+| `Method/Learning/Distillation` | 蒸馏学习 | Distillation, Knowledge Distillation, Model Compression, EMA Teacher |
+| `Method/Learning/Post-Training` | 后训练方法 | Post-Training, Post-training Fine-tuning, Repurposing, One-step Conversion |
+| `Method/Learning/Test-Time-Adaptation` | 测试时自适应 | Test-Time Adaptation, TTA, Test-Time Optimization, Test-Time Training |
 
 ### Architecture
 
@@ -110,6 +144,9 @@
 | `Method/Architecture/Transformer` | Transformer | ViT, Vision Transformer |
 | `Method/Architecture/CNN` | 卷积神经网络 | ConvNet, Convolutional |
 | `Method/Architecture/UNet` | U-Net 架构 | U-Net, Encoder-Decoder |
+| `Method/Architecture/Adapter` | 适配器架构 | Adapter, LoRA, Parameter-Efficient |
+| `Method/Architecture/NAS` | 神经架构搜索 | NAS, Neural Architecture Search, Architecture Search, Proxy Block |
+| `Method/Architecture/MoE` | 稀疏混合专家 | MoE, Mixture-of-Experts, Sparse Expert, Router, Top-K Routing |
 
 ### Optimization
 
@@ -118,6 +155,8 @@
 | `Method/Optimization/Regularization` | 正则化优化 | L1, L2, Sparse, ADMM, IRLS |
 | `Method/Optimization/Gradient` | 梯度方法 | Gradient Descent, SGD, Adam |
 | `Method/Optimization/Adversarial` | 对抗训练 | Adversarial Training |
+| `Method/Optimization/Sampling` | 采样优化 | Sampling, Inference Acceleration, Feature Caching |
+| `Method/Optimization/Bayesian` | 贝叶斯优化 | Bayesian Optimization, GP, Gaussian Process, EHVI, Hyperparameter Search, Acquisition Function |
 
 ### Other Methods
 
@@ -138,6 +177,7 @@
 | `Math/Sampling/Langevin` | Langevin 采样 | Langevin Dynamics |
 | `Math/Information/Entropy` | 熵相关 | Entropy, KL Divergence |
 | `Math/Probability/Bayesian` | 贝叶斯方法 | Bayesian, Prior, Posterior |
+| `Math/PDE` | 偏微分方程 | PDE, Partial Differential Equation, Reaction-Diffusion, Differential Operator |
 
 ---
 
@@ -146,6 +186,7 @@
 | 标签 | 说明 |
 |------|------|
 | `Venue/CVPR` | CVPR 会议 |
+| `Venue/CVPRW` | CVPR Workshop（含 NTIRE 等挑战赛） |
 | `Venue/ICCV` | ICCV 会议 |
 | `Venue/ECCV` | ECCV 会议 |
 | `Venue/NeurIPS` | NeurIPS 会议 |
@@ -164,21 +205,3 @@
 
 | 标签 | 说明 | 相似关键词 |
 |------|------|-----------|
-| `CV/Low-Level/low-light` | 低光照图像处理 | Low-light, Dark Image, Night Scene |
-| `CV/Low-Level/Visable` | 可见光图像处理（通用） | Visible Light, RGB Image |
-| `Method/Learning/Transfer` | 迁移学习/微调 | Transfer Learning, Fine-tuning, Adaptation |
-| `Method/Learning/Fine-Tuning` | 微调策略 | Fine-tuning, Joint Optimization, Unified Training |
-| `Method/Optimization/Sampling` | 采样优化 | Sampling, Inference Acceleration, Feature Caching |
-| `Method/Architecture/Adapter` | 适配器架构 | Adapter, LoRA, Parameter-Efficient |
-| `CV/Domain/Remote-Sensing` | 遥感图像处理领域 | Remote Sensing, Satellite Image, Aerial Image |
-| `CV/Low-Level/Restoration/All-in-One` | 一体化图像恢复 | Universal Restoration, All-in-One, Multi-Task Restoration, Task-Decoupled |
-| `Method/Learning/Multi-Modal` | 多模态方法 | Vision-Language, CLIP, Multi-Modal, VLM |
-| `Math/PDE` | 偏微分方程 | PDE, Partial Differential Equation, Reaction-Diffusion, Differential Operator |
-| `CV/Survey` | 计算机视觉综述论文 | Survey, Review, 综述 |
-| `CV/Low-Level/Blur-Estimation` | 模糊核/PSF估计 | PSF Estimation, Blur Kernel Estimation, Point Spread Function, MTF, SFR |
-| `Method/Learning/Reinforcement-Learning` | 强化学习 | RL, Reinforcement Learning, Policy Gradient, Actor-Critic, MDP |
-| `Method/Learning/Distillation` | 蒸馏学习（通用） | Distillation, Knowledge Distillation, Model Compression, EMA Teacher |
-| `Method/Architecture/NAS` | 神经架构搜索 | NAS, Neural Architecture Search, Architecture Search, Proxy Block |
-| `Method/Optimization/Bayesian` | 贝叶斯优化 | Bayesian Optimization, GP, Gaussian Process, EHVI, Hyperparameter Search, Acquisition Function |
-| `Method/Architecture/MoE` | 稀疏混合专家 | MoE, Mixture-of-Experts, Sparse Expert, Router, Top-K Routing |
-| `Method/Learning/Post-Training` | 后训练方法 | Post-Training, Post-training Fine-tuning, Repurposing, One-step Conversion |

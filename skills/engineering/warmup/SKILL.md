@@ -33,6 +33,8 @@ Look at the current repo to understand its starting state:
 - `CONTEXT.md` and `CONTEXT-MAP.md` at the repo root
 - `docs/adr/` and `docs/agents/` directories
 - `.scratch/` — sign that local-markdown issue tracker convention is already in use
+- `.gitignore` — check if one exists; if not, note it for creation
+- Sibling projects — check for nearby repos (e.g. same parent directory) that may serve as `.gitignore` reference
 
 #### 2.2 Present findings and ask (one at a time)
 
@@ -48,7 +50,7 @@ If a `git remote` points at GitHub, propose GitHub. If GitLab, propose GitLab. O
 
 - **GitHub** — uses the `gh` CLI
 - **GitLab** — uses the `glab` CLI
-- **Local markdown** — issues as files under `.scratch/issues/`
+- **Local markdown** — issues as files under `.scratch/<plan-name>/issues/`
 - **Other** — ask the user to describe the workflow in one paragraph
 
 ---
@@ -121,6 +123,36 @@ Show the user a draft of all files to be written. Let them edit before writing.
 3. `docs/agents/domain.md` — domain doc layout + consumer rules
 4. `docs/agents/triage-context.md` — state semantics table + Agent Brief field semantics (based on project type selected in Section D)
 5. `CONTEXT.md` — initial domain glossary skeleton (if not already present)
+
+**Write `.gitignore`:**
+
+If `.gitignore` does not already exist, create one. Use a sibling project's `.gitignore` as reference if available (ask the user for the path). Include at minimum:
+
+```gitignore
+# Agent / tool directories
+**/.claude/
+**/.agents/
+**/.cursor/
+**/.vscode/
+
+# Project data (large / generated)
+/data/
+/results/
+/logs/
+/checkpoints/
+
+# Scratch / working files
+.scratch/
+
+# Documentation (generated / internal)
+docs/
+```
+
+Adapt the content to the project's language and framework (e.g., add `__pycache__/` for Python, `node_modules/` for Node).
+
+**Create `.scratch/` directory:**
+
+Create the `.scratch/` directory at the repo root. Do **not** pre-create subdirectories like `issues/` — subdirectories are created per-plan as `.scratch/<plan-name>/issues/` when plans are initialized.
 
 For `triage-context.md`, use the state semantics table for the selected project type:
 
