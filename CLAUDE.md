@@ -7,6 +7,11 @@ This is the my-skill collection — a set of Claude Code skills implementing the
 | Skill | Type | Description |
 |-------|------|-------------|
 | warmup | New | Project setup + session warmup |
+| implement | Reused (Matt) | Implement work based on PRD or issues |
+| codebase-design | Reused (Matt) | Deep module design vocabulary |
+| domain-modeling | Reused (Matt) | Build and sharpen domain model |
+| resolving-merge-conflicts | Reused (Matt) | Resolve git merge/rebase conflicts |
+| decision-mapping | Reused (Matt) | Multi-session decision map with fog of war |
 | caveman | New | Ultra-compressed communication (~75% token reduction) |
 | to-my-prd | Adapted | PRD synthesis, asks when info missing |
 | to-my-issues | Adapted | Vertical slicing into issues |
@@ -19,6 +24,13 @@ This is the my-skill collection — a set of Claude Code skills implementing the
 | improve-codebase-architecture | Reused (Matt) | Architecture deepening |
 | handoff | Reused (Matt) | Compact conversation into a handoff document |
 | zoom-out | Reused (Matt) | Zoom out for broader context / higher-level perspective |
+
+## Common Skills
+
+| Skill | Type | Description |
+|-------|------|-------------|
+| teach | Reused (Matt) | Teach a new skill or concept across multiple sessions |
+| writing-great-skills | Reused (Matt) | Reference for writing and editing skills well |
 
 ## Research Skills
 
