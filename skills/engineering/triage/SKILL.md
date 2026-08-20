@@ -1,11 +1,14 @@
 ---
 name: triage
-description: Triage issues through a state machine driven by triage roles. Use when user wants to create an issue, triage issues, review incoming bugs or feature requests, prepare issues for an AFK agent, or manage issue workflow.
+description: Move issues and external PRs through a state machine of triage roles — categorise, verify, grill if needed, and write agent-ready briefs. Use when user wants to create an issue, triage issues, review incoming bugs or feature requests, prepare issues for an AFK agent, or manage issue workflow.
+disable-model-invocation: true
 ---
 
 # Triage
 
 Move issues on the project issue tracker through a small state machine of triage roles.
+
+If this repo treats external pull requests as a request surface (see the issue-tracker config), triage covers them too: **a PR is an issue with attached code**. The same states, roles, and briefs apply — the diff is just extra context the triager reads.
 
 Every comment or issue posted to the issue tracker during triage **must** start with this disclaimer:
 
@@ -39,12 +42,14 @@ These are canonical role names — the actual label strings used in the issue tr
 
 State transitions: an unlabeled issue normally goes to `needs-triage` first; from there it moves to `needs-info`, `ready-for-agent`, `ready-for-human`, or `wontfix`. `needs-info` returns to `needs-triage` once the reporter replies. The maintainer can override at any time — flag transitions that look unusual and ask before proceeding.
 
+For a PR, the same states read against the attached code: `ready-for-agent` means a brief is attached and an agent should take the next step on the diff; `ready-for-human` means the change needs a human judgement the agent can't make; `needs-info` means the contributor must answer questions before triage can finish.
+
 ## Invocation
 
 The maintainer invokes `/triage` and describes what they want in natural language. Interpret the request and act. Examples:
 
 - "Show me anything that needs my attention"
-- "Let's look at #42"
+- "Let's look at #42" (issue or PR)
 - "Move #42 to ready-for-agent"
 - "What's ready for agents to pick up?"
 
@@ -56,11 +61,13 @@ Query the issue tracker and present three buckets, oldest first:
 2. **`needs-triage`** — evaluation in progress.
 3. **`needs-info` with reporter activity since the last triage notes** — needs re-evaluation.
 
-Show counts and a one-line summary per issue. Let the maintainer pick.
+When PRs are in scope, include external PRs in these buckets and tag each line `[PR]` or `[issue]`. Discovery surfaces only *external* PRs (the tracker config marks the boundary); a PR from a repo maintainer is internal work, not a triage request.
 
-## Triage a specific issue
+Show counts and a one-line summary per item. Let the maintainer pick.
 
-1. **Gather context.** Read the full issue (body, comments, labels, reporter, dates). Parse any prior triage notes so you don't re-ask resolved questions. Explore the codebase using the project's domain glossary, respecting ADRs in the area. Read `.out-of-scope/*.md` and surface any prior rejection that resembles this issue.
+## Triage a specific issue or PR
+
+1. **Gather context.** Read the full issue or PR (body, comments, labels, reporter, dates; for a PR, also read the diff). Parse any prior triage notes so you don't re-ask resolved questions. Explore the codebase using the project's domain glossary, respecting ADRs in the area. Read `.out-of-scope/*.md` and surface any prior rejection that resembles this issue or PR.
 
 2. **Recommend.** Tell the maintainer your category and state recommendation with reasoning, plus a brief codebase summary relevant to the issue. Wait for direction.
 
@@ -100,4 +107,4 @@ Capture everything resolved during grilling under "established so far" so the wo
 
 ## Resuming a previous session
 
-If prior triage notes exist on the issue, read them, check whether the reporter has answered any outstanding questions, and present an updated picture before continuing. Don't re-ask resolved questions.
+If prior triage notes exist on the issue or PR, read them, check whether the reporter has answered any outstanding questions, and present an updated picture before continuing. Don't re-ask resolved questions.

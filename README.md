@@ -28,7 +28,7 @@ Warmup   →   想法 → Issue     →    状态机   →   实现循环   → 
 ```
 想法
   → research-hours（可选，多角色发散找方向）
-  → grill-me / grill-with-docs（逐问逐答，收敛）
+  → grilling / grill-with-docs（逐问逐答，收敛）
   → codex（可选，外部意见——challenge 假设或 review 方案）
   → to-my-prd（固化 PRD，信息不足时追问）
   → to-my-issues（垂直拆解为 Issue）
@@ -42,13 +42,13 @@ Warmup   →   想法 → Issue     →    状态机   →   实现循环   → 
 
 | 场景 | 方法 |
 |------|------|
-| 项目实现 | tdd（Red→Green→Refactor） |
+| 项目实现 | tdd（Red→Green）+ code-review（重构归审查，不在循环内） |
 | 科研实现 | 上下文驱动，Agent 辅助 |
 | Bug | diagnose（6 Phase Gate） |
 
 ### Phase 4: 审查
 
-`in-review` 状态触发并行审查（code-reviewer + security-reviewer）。
+`in-review` 状态触发 `/code-review`（Standards + Spec 双轴）+ security-reviewer 并行审查。
 
 ### Phase 5: 归档
 
@@ -89,14 +89,17 @@ cp -r skills/research/* ~/.claude/skills/
 |------|------|------|
 | **warmup** | 新建 | 项目 setup（4 决策 → 5 配置 + CONTEXT.md）+ 会话预热（加载上下文、Plan 进度） |
 | **research-hours** | 自建 | 学术版 Office Hours——资深 PI 视角研究诊断，发散找方向 |
-| **grill-me** | 复用 Matt | 裸质询——逐问逐答，不依赖项目文档 |
+| **grilling** | 复用 Matt | 质询原语——逐问逐答，sharpens plan/decision/idea |
 | **grill-with-docs** | 复用 Matt | 文档驱动质询——交叉验证 CONTEXT.md + ADR |
 | **to-my-prd** | 适配 Matt | 对话上下文 → 结构化 PRD，信息缺失时追问 |
 | **to-my-issues** | 适配 Matt | PRD / Plan → 垂直切片 Issue |
-| **triage** | 复用 Matt | Issue 状态机管理 |
+| **triage** | 复用 Matt | Issue + 外部 PR 状态机管理 |
 | **tdd** | 复用 Matt | Red-Green-Refactor 循环 |
 | **diagnose** | 复用 Matt | 6 Phase 诊断循环 + Feedback Loop |
-| **improve-codebase-architecture** | 复用 Matt | 架构深化——浅模块 → 深模块重组 |
+| **improve-codebase-architecture** | 复用 Matt | 架构深化——扫描 hot spots → HTML 报告 → grilling |
+| **code-review** | 复用 Matt | 双轴审查——Standards + Spec，并行子代理 |
+| **prototype** | 复用 Matt | 抛弃式原型——回答设计问题（逻辑 TUI 或 UI 多变体） |
+| **wayfinder** | 复用 Matt | 超大工作规划——决策票地图，逐张解决直到路清晰 |
 | **caveman** | 新建 | 压缩通信模式——砍 75% token，保留全部技术精度 |
 | **handoff** | 复用 Matt | 会话交接——压缩当前对话为交接文档 |
 | **zoom-out** | 复用 Matt | 宏观视角——拉远看代码/架构的全局上下文 |

@@ -166,7 +166,7 @@ cssclasses:
          ├── office-hours / research-hours（可选前置，发散找方向）
          │     └── 多角色讨论，拓宽视角
          │
-         ├── grill-me / grill-with-docs（收敛，删除不确定性）
+         ├── grilling / grill-with-docs（收敛，删除不确定性）
          │     └── 逐问逐答，一次一个问题，你说停才停
          │
          ├── codex（可选，外部独立意见——challenge 假设或 review 方案）
@@ -182,13 +182,13 @@ cssclasses:
 
 不是必须步骤——如果方向已经明确，直接进入 grill。
 
-### 1.2 grill-me / grill-with-docs — 质询协议
+### 1.2 grilling / grill-with-docs — 质询协议
 
 **核心机制**：逐问逐答的决策树深度优先遍历。Agent 每次只问当前最大的不确定性，基于你的回答往下走，直到你说"够了"或所有分支被走完。
 
 **保持 Matt Pocock 原样**：不设固定的提问清单。Agent 动态判断该问什么——固定清单会限制 Agent 根据具体想法做出有价值追问的能力。
 
-#### grill-me — 裸质询
+#### grilling — 裸质询
 
 适用：快速验证一个想法，不涉及项目文档。
 

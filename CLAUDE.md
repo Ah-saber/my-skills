@@ -7,7 +7,7 @@ This is the my-skill collection — a set of Claude Code skills implementing the
 | Skill | Type | Description |
 |-------|------|-------------|
 | warmup | New | Project setup + session warmup |
-| implement | Reused (Matt) | Implement work based on PRD or issues |
+| implement | Reused (Matt) | Implement work based on spec or tickets |
 | codebase-design | Reused (Matt) | Deep module design vocabulary |
 | domain-modeling | Reused (Matt) | Build and sharpen domain model |
 | resolving-merge-conflicts | Reused (Matt) | Resolve git merge/rebase conflicts |
@@ -16,13 +16,15 @@ This is the my-skill collection — a set of Claude Code skills implementing the
 | to-my-prd | Adapted | PRD synthesis, asks when info missing |
 | to-my-issues | Adapted | Vertical slicing into issues |
 | research-hours | Self-built | Academic Office Hours — PI perspective research diagnosis |
-| grill-me | Reused (Matt) | Bare grilling |
+| grilling | Reused (Matt) | Relentless interview primitive — sharpen a plan/decision/idea |
 | grill-with-docs | Reused (Matt) | Document-driven grilling |
 | tdd | Reused (Matt) | Red-Green-Refactor |
-| diagnose | Reused (Matt) | 6-phase debugging |
-| triage | Reused (Matt) | Issue state machine |
-| improve-codebase-architecture | Reused (Matt) | Architecture deepening |
+| triage | Reused (Matt) | Issue + external-PR state machine |
+| improve-codebase-architecture | Reused (Matt) | Architecture deepening (HTML report → grilling) |
 | handoff | Reused (Matt) | Compact conversation into a handoff document |
+| code-review | Reused (Matt) | Two-axis review: Standards + Spec, parallel sub-agents |
+| prototype | Reused (Matt) | Throwaway prototype answering a design question (logic or UI) |
+| wayfinder | Reused (Matt) | Plan huge work as decision tickets on the issue tracker |
 | zoom-out | Reused (Matt) | Zoom out for broader context / higher-level perspective |
 
 ## Common Skills
