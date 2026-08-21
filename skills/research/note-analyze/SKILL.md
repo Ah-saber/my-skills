@@ -239,7 +239,6 @@ ask_user(suggestions)
 | 格式不规范 | `/note-standardize` | Callout、Wikilink、Frontmatter、标签规范化 |
 | 需要建立关联 | `/note-link` | 发现并创建 Wikilink |
 | 论文引用关系 | `/paper-graph` | 生成层次布局引用图谱 |
-| Idea概念关联 | `/idea-map` | 生成力导向布局概念图谱 |
 | 综合研究主题 | `/knowledge-canvas` | 生成区域布局知识画布 |
 
 **Canvas 可视化技能参考 json-canvas 格式规范**。

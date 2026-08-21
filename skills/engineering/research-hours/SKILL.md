@@ -60,7 +60,6 @@ allowed-tools:
 | `/brainstorm` | 发散思维，探索研究方向的更多可能性 | Idea 探索阶段、方法设计遇到瓶颈 |
 | `/codex` | 独立 AI 审稿人，adversarial review | Phase 3.5 第二意见、论文写作阶段 pre-rebuttal |
 | `/paper-search` | 搜索 Zotero 论文库 | 任何阶段需要查文献时 |
-| `/paper-notes` | 创建论文笔记 | 发现新的相关工作时 |
 | `/note-analyze` | 分析 Obsidian 笔记结构 | 理解用户已有研究积累 |
 
 ### MCP
@@ -300,10 +299,9 @@ git log --oneline -20 2>/dev/null || echo "NOT_GIT_REPO"
 
 1. **搜索论文**：优先用 `/paper-search` 技能，fallback 到 Zotero MCP 或 WebSearch
 2. **查已有笔记**：Grep Obsidian 笔记库，避免重复讨论
-3. **创建笔记**：发现新论文时用 `/paper-notes`
-4. **发散探索**：遇到 stuck 时用 `/brainstorm` 打开思路
-5. **最新文献**：用 WebSearch 搜索 arXiv 最新相关论文（先征求用户同意）
-6. **深度推理**：复杂假设分析时用 Sequential Thinking MCP
+3. **发散探索**：遇到 stuck 时用 `/brainstorm` 打开思路
+4. **最新文献**：用 WebSearch 搜索 arXiv 最新相关论文（先征求用户同意）
+5. **深度推理**：复杂假设分析时用 Sequential Thinking MCP
 
 发现新的相关工作时，用 `[[zotero://CITE_KEY|Paper]]` 格式关联。
 

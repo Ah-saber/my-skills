@@ -65,4 +65,3 @@ curl -s "https://alphaxiv.org/abs/{PAPER_ID}.md"
 ## 注意事项
 
 - 无需身份验证——这些是公开端点
-- 考虑与项目其他技能集成：获取概述后可建议用户使用 `/paper-notes` 创建完整笔记

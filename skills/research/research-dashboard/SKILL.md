@@ -264,7 +264,6 @@ updated_date: YYYY-MM-DD
 | 技能 | 范围 | 说明 |
 |------|------|------|
 | /paper-dashboard | 论文 | 专注论文阅读进度 |
-| /idea-tracker | Idea | 专注 Idea 状态管理 |
 | /research-dashboard | 全部 | 整合所有研究内容 |
 
 ## 配置选项

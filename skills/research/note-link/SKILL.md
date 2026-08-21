@@ -1,6 +1,6 @@
 ---
 name: note-link
-description: 发现笔记间的语义关联，创建合理 Wikilink 增强笔记网络连通性。**必须使用此技能**当用户说"建立关联"、"链接笔记"、"发现关联"、"修复链接"、"断链检测"、"建立笔记关联"、"检查链接"，或需要为孤立笔记建立连接、发现并创建笔记间的语义关联时。链接完成后自动建议调用：/paper-graph（论文引用关系图谱）、/idea-map（Idea概念关系图谱）、/knowledge-canvas（综合知识画布）。
+description: 发现笔记间的语义关联，创建合理 Wikilink 增强笔记网络连通性。**必须使用此技能**当用户说"建立关联"、"链接笔记"、"发现关联"、"修复链接"、"断链检测"、"建立笔记关联"、"检查链接"，或需要为孤立笔记建立连接、发现并创建笔记间的语义关联时。链接完成后自动建议调用：/paper-graph（论文引用关系图谱）、/knowledge-canvas（综合知识画布）。
 version: 1.1.0
 changelog: "[1.1.0] 整合 obsidian-cli backlinks - 检查现有链接避免重复，发现双向关联机会"
 ---
@@ -179,9 +179,8 @@ def verify_link(link_text):
 链接创建完成！是否生成可视化预览？
 
 1. /paper-graph - 论文引用关系图谱
-2. /idea-map - Idea概念关系图谱
-3. /knowledge-canvas - 综合知识画布
-4. 跳过
+2. /knowledge-canvas - 综合知识画布
+3. 跳过
 ```
 
 ## GOOD vs BAD
@@ -339,7 +338,6 @@ def fix_broken_link(link_text):
 | 操作 | 调用技能 | 说明 |
 |------|----------|------|
 | 论文引用关系 | `/paper-graph` | 层次布局引用图谱 |
-| Idea概念关联 | `/idea-map` | 力导向布局概念图谱 |
 | 综合知识视图 | `/knowledge-canvas` | 区域布局知识画布 |
 
 **Canvas 可视化技能参考 json-canvas 格式规范**。

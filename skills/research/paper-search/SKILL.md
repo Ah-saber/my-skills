@@ -263,9 +263,6 @@ if not results:
 ## 后续操作
 
 - 选择序号查看论文详情
-- `/paper-summary <序号>` - 总结论文内容
-- `/annotation-extract <序号>` - 提取PDF注释
-- `/paper-notes <序号>` - 创建Obsidian笔记
 ```
 
 ## 快速参考

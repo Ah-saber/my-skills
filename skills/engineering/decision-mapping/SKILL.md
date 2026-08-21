@@ -38,7 +38,7 @@ Each ticket must be sized to one 100K token agent session.
 There are three types of tickets:
 
 - **Research**: Reading documentation, third-party API's, or local resources like knowledge bases. Creates a markdown summary as an asset. Use this when knowledge outside the current working directory is required.
-- **Prototype**: Writing UI or logic code to test a hypothesis, or to explore a design space. Uses the /prototype skill. Creates a prototype as an asset. Use this when "how should it look" or "how should it behave" is the key question.
+- **Prototype**: Writing UI or logic code to test a hypothesis, or to explore a design space. Creates a prototype as an asset. Use this when "how should it look" or "how should it behave" is the key question.
 - **Discuss**: Conversation with the agent. Uses the /grilling and /domain-modelling skills. The default case.
 
 ## Fog of war
