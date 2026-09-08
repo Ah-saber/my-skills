@@ -11,9 +11,9 @@ If the user did not say where to save the article, ask once and remember the pat
 
 Then run a beat-by-beat journey:
 
-1. Write 2–3 candidate **starting beats**, drawn from the raw material. Each is a different entry point into the article. Show the user the beats before writing it to the article file. The user picks one. Preview what beats that might lead to once written - as if the user is seeing a little way down the path.
-2. Once the user picks a starting beat, write **only that beat** to the article file. A beat may be one sentence or several paragraphs — whatever that beat naturally is. Stop there.
-3. Re-read the article file from disk. Then offer 2–3 candidate **next beats** — different directions the journey could pivot to from where the article now stands.
+1. Write 2–3 candidate **starting beats**, drawn from the raw material. Each is a different entry point into the article. Show the user the beats before writing it to the article file. The user picks one. Preview what beats that might lead to once written, as if the user is seeing a little way down the path.
+2. Once the user picks a starting beat, write **only that beat** to the article file. A beat may be one sentence or several paragraphs: whatever that beat naturally is. Stop there.
+3. Re-read the article file from disk. Then offer 2–3 candidate **next beats**: different directions the journey could pivot to from where the article now stands.
 4. Loop steps 2–4 until the article reaches a natural end.
 
 </what-to-do>

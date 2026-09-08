@@ -1,6 +1,6 @@
 ---
 name: triage
-description: Move issues and external PRs through a state machine of triage roles — categorise, verify, grill if needed, and write agent-ready briefs. Use when user wants to create an issue, triage issues, review incoming bugs or feature requests, prepare issues for an AFK agent, or manage issue workflow.
+description: Move issues and external PRs through a state machine of triage roles, categorise, verify, grill if needed, and write agent-ready briefs. Use when user wants to create an issue, triage issues, review incoming bugs or feature requests, prepare issues for an AFK agent, or manage issue workflow.
 disable-model-invocation: true
 ---
 
@@ -38,9 +38,9 @@ Five **state** roles:
 
 Every triaged issue should carry exactly one category role and one state role. If state roles conflict, flag it and ask the maintainer before doing anything else.
 
-These are canonical role names — the actual label strings used in the issue tracker may differ. The mapping should have been provided to you - run `/setup-matt-pocock-skills` if not.
+These are canonical role names. The actual label strings used in the issue tracker may differ. The mapping should have been provided to you. If not, tell the user to run `/setup-matt-pocock-skills`.
 
-State transitions: an unlabeled issue normally goes to `needs-triage` first; from there it moves to `needs-info`, `ready-for-agent`, `ready-for-human`, or `wontfix`. `needs-info` returns to `needs-triage` once the reporter replies. The maintainer can override at any time — flag transitions that look unusual and ask before proceeding.
+State transitions: an unlabeled issue normally goes to `needs-triage` first; from there it moves to `needs-info`, `ready-for-agent`, `ready-for-human`, or `wontfix`. `needs-info` returns to `needs-triage` once the reporter replies. The maintainer can override at any time; flag transitions that look unusual and ask before proceeding.
 
 For a PR, the same states read against the attached code: `ready-for-agent` means a brief is attached and an agent should take the next step on the diff; `ready-for-human` means the change needs a human judgement the agent can't make; `needs-info` means the contributor must answer questions before triage can finish.
 
@@ -57,9 +57,9 @@ The maintainer invokes `/triage` and describes what they want in natural languag
 
 Query the issue tracker and present three buckets, oldest first:
 
-1. **Unlabeled** — never triaged.
-2. **`needs-triage`** — evaluation in progress.
-3. **`needs-info` with reporter activity since the last triage notes** — needs re-evaluation.
+1. **Unlabeled**: never triaged.
+2. **`needs-triage`**: evaluation in progress.
+3. **`needs-info` with reporter activity since the last triage notes**: needs re-evaluation.
 
 When PRs are in scope, include external PRs in these buckets and tag each line `[PR]` or `[issue]`. Discovery surfaces only *external* PRs (the tracker config marks the boundary); a PR from a repo maintainer is internal work, not a triage request.
 
@@ -76,12 +76,12 @@ Show counts and a one-line summary per item. Let the maintainer pick.
 4. **Grill (if needed).** If the issue needs fleshing out, run a `/grill-with-docs` session.
 
 5. **Apply the outcome:**
-   - `ready-for-agent` — post an agent brief comment ([AGENT-BRIEF.md](AGENT-BRIEF.md)).
-   - `ready-for-human` — same structure as an agent brief, but note why it can't be delegated (judgment calls, external access, design decisions, manual testing).
-   - `needs-info` — post triage notes (template below).
-   - `wontfix` (bug) — polite explanation, then close.
-   - `wontfix` (enhancement) — write to `.out-of-scope/`, link to it from a comment, then close ([OUT-OF-SCOPE.md](OUT-OF-SCOPE.md)).
-   - `needs-triage` — apply the role. Optional comment if there's partial progress.
+   - `ready-for-agent`: post an agent brief comment ([AGENT-BRIEF.md](AGENT-BRIEF.md)).
+   - `ready-for-human`: same structure as an agent brief, but note why it can't be delegated (judgment calls, external access, design decisions, manual testing).
+   - `needs-info`: post triage notes (template below).
+   - `wontfix` (bug): polite explanation, then close.
+   - `wontfix` (enhancement): write to `.out-of-scope/`, link to it from a comment, then close ([OUT-OF-SCOPE.md](OUT-OF-SCOPE.md)).
+   - `needs-triage`: apply the role. Optional comment if there's partial progress.
 
 ## Quick state override
 
